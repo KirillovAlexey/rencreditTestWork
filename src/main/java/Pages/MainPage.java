@@ -10,7 +10,7 @@ import java.util.List;
 public class MainPage extends BasePage {
 
 
-    public MainPage(){
+    protected MainPage(){
         PageFactory.initElements(BaseStep.getDriver(), this);
     }
 

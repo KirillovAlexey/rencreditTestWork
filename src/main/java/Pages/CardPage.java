@@ -9,7 +9,7 @@ import java.util.List;
 
 public class CardPage{
 
-    public CardPage() {
+    protected CardPage() {
         PageFactory.initElements(BaseStep.getDriver(), this);
     }
 

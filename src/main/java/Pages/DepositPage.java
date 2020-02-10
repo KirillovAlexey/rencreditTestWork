@@ -9,7 +9,7 @@ import java.util.List;
 
 public class DepositPage{
 
-    public DepositPage() {
+    protected DepositPage() {
         PageFactory.initElements(BaseStep.getDriver(), this);
     }
 

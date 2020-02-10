@@ -4,11 +4,10 @@ import Steps.MainStep;
 import org.testng.annotations.Test;
 
 
-public class FirstTest extends BaseStep {
+public class FirstTest  extends BaseStep {
 
     @Test
     public void main() {
-        //BaseStep baseStep = new BaseStep();
 
         MainStep mainStep = new MainStep();
         mainStep.clickMenu("Открыть вклад");

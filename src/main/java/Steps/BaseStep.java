@@ -13,8 +13,8 @@ import java.util.Map;
 
 public class BaseStep extends BasePage {
 
-    public static ChromeOptions co = new ChromeOptions();
-    public static WebDriver driver;
+    private static final ChromeOptions co = new ChromeOptions();
+    private static WebDriver driver;
 
     public static WebDriver getDriver() {
         return driver;
@@ -23,8 +23,7 @@ public class BaseStep extends BasePage {
     @BeforeMethod
     public static void setUp() {
         System.setProperty("webdriver.chrome.driver", MyProperties.getInstance().getProperty("path.chrome"));
-        //ChromeOptions co = new ChromeOptions();
-        Map<String, Object> prefs = new HashMap<String, Object>();
+        Map<String, Object> prefs = new HashMap<>();
         prefs.put("plugins.always_open_pdf_externally", true);
         co.setExperimentalOption("prefs", prefs);
         driver = new ChromeDriver(co);
@@ -32,7 +31,7 @@ public class BaseStep extends BasePage {
         driver.get(MyProperties.getInstance().getProperty("url"));
     }
 
-    @AfterMethod
+    //@AfterMethod
     public static void tearDown() {
         getDriver().quit();
     }

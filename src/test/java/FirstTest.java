@@ -1,5 +1,3 @@
-import Pages.BasePage;
-import Pages.DepositPage;
 import Steps.BaseStep;
 import Steps.DepositStep;
 import Steps.MainStep;
@@ -13,7 +11,7 @@ public class FirstTest extends BaseStep {
         //BaseStep baseStep = new BaseStep();
 
         MainStep mainStep = new MainStep();
-        mainStep.clickMenu("Открыть вклад");
+        mainStep.clickMenu("РћС‚РєСЂС‹С‚СЊ РІРєР»Р°Рґ");
         DepositStep depositStep = new DepositStep();
         depositStep.ChoiceOpenDeposit();
         depositStep.inputMoney();

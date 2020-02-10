@@ -8,7 +8,7 @@ public class SecondTest extends BaseStep {
     @Test
     public void main() {
         MainStep mainStep = new MainStep();
-        mainStep.clickMenu("Оформить карту");
+        mainStep.clickMenu("РћС„РѕСЂРјРёС‚СЊ РєР°СЂС‚Сѓ");
 
         CardStep cardStep = new CardStep();
         cardStep.inputInformation();

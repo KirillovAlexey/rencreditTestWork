@@ -9,10 +9,11 @@ import java.util.List;
 
 public class MainPage extends BasePage {
 
+
     public MainPage(){
         PageFactory.initElements(BaseStep.getDriver(), this);
     }
 
-    @FindBy(xpath = "//a[@class='service__title-action']")//div[@class='service__title']"
+    @FindBy(xpath = "//a[@class='service__title-action']")
     public static List<WebElement> CCD;   //Cards,Credit,Deposit
 }

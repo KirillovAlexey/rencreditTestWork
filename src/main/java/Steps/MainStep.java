@@ -3,17 +3,12 @@ package Steps;
 import Pages.MainPage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import util.SetDriver;
 
-public class MainStep extends MainPage {
+public class MainStep {
+    MainPage mainPage = new MainPage();
 
     public void clickMenu(String s) {
-
-        for (WebElement e : MainPage.CCD) {
-            ((JavascriptExecutor) BaseStep.getDriver()).executeScript("arguments[0].scrollIntoView();", e);
-            if (e.getAttribute("text").equals(s)) {
-                e.click();
-                break;
-            }
-        }
+        mainPage.selectMenuItem(mainPage.CCD,s);
     }
 }

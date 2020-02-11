@@ -2,18 +2,31 @@ package Steps;
 
 import Pages.BasePage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterTest;
 import util.MyProperties;
+import util.SetDriver;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
-public class BaseStep extends BasePage {
+public class BaseStep {
 
-    private static final ChromeOptions co = new ChromeOptions();
+    public static Properties properties = MyProperties.getInstance().getProperties();
+
+
+    public void setUp() {
+        WebDriver driver = SetDriver.getDriver();
+        driver.manage().window().maximize();
+        driver.get(MyProperties.getInstance().getProperty("url"));
+        driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
+    }
+
+    public void tearDown() {
+        SetDriver.quitDriver();
+    }
+
+/*    private static final ChromeOptions co = new ChromeOptions();
     private static WebDriver driver;
 
     public static WebDriver getDriver() {
@@ -31,8 +44,8 @@ public class BaseStep extends BasePage {
         driver.get(MyProperties.getInstance().getProperty("url"));
     }
 
-    //@AfterMethod
+    @AfterMethod
     public static void tearDown() {
         getDriver().quit();
-    }
+    }*/
 }

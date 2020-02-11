@@ -1,20 +1,14 @@
 package Pages;
 
-import Steps.BaseStep;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class DepositPage{
-
-    protected DepositPage() {
-        PageFactory.initElements(BaseStep.getDriver(), this);
-    }
+public class DepositPage extends BasePage {
 
     @FindBy(xpath = "//div[@class='internet-bank']//input[@type='checkbox']//..")
-    public static List<WebElement> ChoiceButton;
+    public static List<WebElement> choiceButton;
     @FindBy(xpath = "//input[@name='amount']")
     public static WebElement amount;
     @FindBy(xpath = "//select[@id='period']//option")

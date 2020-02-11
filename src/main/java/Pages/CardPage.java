@@ -1,17 +1,12 @@
 package Pages;
 
-import Steps.BaseStep;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class CardPage{
+public class CardPage extends BasePage {
 
-    protected CardPage() {
-        PageFactory.initElements(BaseStep.getDriver(), this);
-    }
 
     @FindBy(xpath = "//input[@name='ClientLastName']")
     protected static WebElement clientLastName;

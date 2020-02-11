@@ -1,6 +1,7 @@
 import Steps.BaseStep;
 import Steps.CardStep;
 import Steps.MainStep;
+import io.qameta.allure.Step;
 import org.testng.annotations.Test;
 
 public class SecondTest extends BaseStep {

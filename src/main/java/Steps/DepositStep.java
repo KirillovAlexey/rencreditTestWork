@@ -1,19 +1,25 @@
 package Steps;
 
 import Pages.DepositPage;
+import Pages.MainPage;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Locatable;
+import org.openqa.selenium.support.PageFactory;
 
-public class DepositStep extends DepositPage {
-    public void ChoiceOpenDeposit() {
+public class DepositStep extends DepositPage{
 
-        for (WebElement e : DepositPage.ChoiceButton) {
+    public static void ChoiceOpenDeposit() {
+
+        for (WebElement e : choiceButton) {
             ((Locatable) e).getCoordinates().inViewPort();
-            if (e.getAttribute("class").equals("jq-checkbox calculator__check")) {
+            if(!e.isDisplayed()){
                 e.click();
-                break;
             }
+/*            if (e.getAttribute("class").equals("jq-checkbox calculator__check")) {
+                e.click();
+                return;
+            }*/
         }
     }
 

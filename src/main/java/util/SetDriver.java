@@ -11,7 +11,7 @@ import java.util.Properties;
 
 public class SetDriver {
 
-    private static Properties properties = MyProperties.getInstance().getProperties();
+    private static final Properties properties = MyProperties.getInstance().getProperties();
     private static WebDriver driver = null;
 
     public static WebDriver getDriver() {
@@ -34,8 +34,8 @@ public class SetDriver {
             case "chrome":
                 System.setProperty("webdriver.chrome.driver", properties.getProperty("path.chrome"));
                 ChromeOptions options = new ChromeOptions();
-                options.setExperimentalOption("useAutomationExtension", false);
-                Map<String, Object> prefs = new HashMap<String, Object>();
+                //options.setExperimentalOption("useAutomationExtension", false);
+                Map<String, Object> prefs = new HashMap<>();
                 prefs.put("plugins.always_open_pdf_externally", true);
                 options.setExperimentalOption("prefs", prefs);
                 driver = new ChromeDriver(options);

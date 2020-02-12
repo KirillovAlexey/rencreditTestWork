@@ -1,11 +1,13 @@
 package Steps;
 
 import Pages.MainPage;
+import io.qameta.allure.Step;
 
 public class MainStep {
-    public MainPage mainPage = new MainPage();
+    private final MainPage mainPage = new MainPage();
 
+    @Step("Выбор интересующего меню.")
     public void clickMenu(String s) {
-        mainPage.selectMenuItem(mainPage.CCD,s);
+        mainPage.selectMenuItem(mainPage.CCD, s);
     }
 }

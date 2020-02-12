@@ -9,23 +9,20 @@ import org.testng.annotations.Test;
 
 public class FirstTest {
 
-    private  BaseStep baseStep = new BaseStep();
-    private  MainStep mainStep;
-    private  DepositStep depositStep;
+    private static final BaseStep baseStep = new BaseStep();
+    private static final MainStep mainStep = new MainStep();
+    private static final DepositStep depositStep = new DepositStep();
 
     @BeforeTest
     public void setUp() {
         baseStep.setUp();
     }
 
-    @Test
+    @Test(description = "Тестовый сценарий №1")
     @Step("Выбор баттона 'Открытие вклада'")
     public void main() {
-        mainStep = new MainStep();
         mainStep.clickMenu("Открыть вклад");
-
-        //-------------------------------------------------------------
-        depositStep = new DepositStep();
+        //-------------------------------------------------------
         depositStep.ChoiceOpenDeposit();
         depositStep.inputMoney("2 800 000");
         depositStep.choiceTime("12 месяцев");

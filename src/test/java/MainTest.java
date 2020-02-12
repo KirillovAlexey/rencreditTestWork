@@ -1,10 +1,11 @@
+/*
 import Steps.BaseStep;
 import org.testng.annotations.*;
 
 public class MainTest {
 
     @Factory
-    @BeforeGroups
+    @BeforeSuite
     public Object[] getTestClass() {
         Object[] factoryTest = new Object[2];
         factoryTest[0] = new FirstTest();
@@ -12,3 +13,4 @@ public class MainTest {
         return factoryTest;
     }
 }
+*/

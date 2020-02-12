@@ -12,11 +12,11 @@ import java.util.List;
 
 public class BasePage {
 
-    protected BasePage() {
+    BasePage() {
         PageFactory.initElements(SetDriver.getDriver(), this);
     }
 
-    WebDriverWait wait = new WebDriverWait(SetDriver.getDriver(), 2);
+    private final WebDriverWait wait = new WebDriverWait(SetDriver.getDriver(), 2);
 
     public void fillField(WebElement field, String value) {
         field.clear();
@@ -38,7 +38,7 @@ public class BasePage {
 
     public void selectInput(WebElement element, String value) {
         element.click();
-        element.sendKeys(value,Keys.ENTER);
+        element.sendKeys(value, Keys.ENTER);
     }
 
     public void scrollAndClick(WebElement element) {

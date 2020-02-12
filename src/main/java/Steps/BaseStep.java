@@ -1,17 +1,15 @@
 package Steps;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import util.MyProperties;
 import util.SetDriver;
 
-import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class BaseStep {
 
-    public Properties properties = MyProperties.getInstance().getProperties();
-
-
+    @Step("Начало работы")
     public void setUp() {
         WebDriver driver = SetDriver.getDriver();
         driver.manage().window().maximize();
@@ -20,30 +18,8 @@ public class BaseStep {
         driver.manage().timeouts().pageLoadTimeout(120, TimeUnit.SECONDS);
     }
 
+    @Step("Завершение работы")
     public void tearDown() {
         SetDriver.quitDriver();
     }
-
-/*    private static final ChromeOptions co = new ChromeOptions();
-    private static WebDriver driver;
-
-    public static WebDriver getDriver() {
-        return driver;
-    }
-
-    @BeforeMethod
-    public static void setUp() {
-        System.setProperty("webdriver.chrome.driver", MyProperties.getInstance().getProperty("path.chrome"));
-        Map<String, Object> prefs = new HashMap<>();
-        prefs.put("plugins.always_open_pdf_externally", true);
-        co.setExperimentalOption("prefs", prefs);
-        driver = new ChromeDriver(co);
-        driver.manage().window().maximize();
-        driver.get(MyProperties.getInstance().getProperty("url"));
-    }
-
-    @AfterMethod
-    public static void tearDown() {
-        getDriver().quit();
-    }*/
 }

@@ -1,14 +1,16 @@
 package Steps;
 
 import Pages.CardPage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import util.SetDriver;
 
 public class CardStep {
 
-    CardPage cardPage = new CardPage();
-    
+    private final CardPage cardPage = new CardPage();
+
+    @Step("Заполнение информации о держателе карты.")
     public void inputInformation(String lName, String fName, String phone, String eMail, String town) {
         cardPage.fillField(cardPage.clientLastName, lName);
         cardPage.fillField(cardPage.clientName, fName);
@@ -24,21 +26,5 @@ public class CardStep {
                 break;
             }
         }
-
-/*        clientLastName.sendKeys("Кириллов");
-        clientName.sendKeys("Алексей");
-        //clientSecondName.sendKeys("Игоревич");
-        checkBoxSecondNameNull.click();
-        phone.click();
-        phone.sendKeys("(987)517-51-58");
-        eMail.sendKeys("rikxela@gmail.com");
-        listTownClick.click();
-        for (WebElement element : choiceTown) {
-            if (element.getText().equals("Пензенская область")) {
-                ((JavascriptExecutor) SetDriver.getDriver()).executeScript("arguments[0].scrollIntoView();", element);
-                element.click();
-                break;
-            }
-        }*/
     }
 }

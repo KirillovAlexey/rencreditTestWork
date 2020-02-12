@@ -7,39 +7,23 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Locatable;
 import org.openqa.selenium.support.PageFactory;
 
-public class DepositStep extends DepositPage{
+public class DepositStep{
 
-    public static void ChoiceOpenDeposit() {
+    private DepositPage depositPage = new DepositPage();
 
-        for (WebElement e : choiceButton) {
-            ((Locatable) e).getCoordinates().inViewPort();
-            if(!e.isDisplayed()){
-                e.click();
-            }
-/*            if (e.getAttribute("class").equals("jq-checkbox calculator__check")) {
-                e.click();
-                return;
-            }*/
-        }
+    public void ChoiceOpenDeposit() {
+        depositPage.scrollAndClick(depositPage.choiceButton);
     }
 
-    public void inputMoney() {
-        ((Locatable) DepositPage.amount).getCoordinates().inViewPort();
-        DepositPage.amount.sendKeys("2 800 000", Keys.ENTER);
+    public void inputMoney(String s) {
+        depositPage.selectInput(depositPage.amount,s);
     }
 
-    public void choiceTime() {
-        ((Locatable) DepositPage.document).getCoordinates().inViewPort();
-        for (WebElement e : DepositPage.period) {
-            if (e.getText().equals("12 месяцев")) {
-                e.click();
-                break;
-            }
-        }
+    public void choiceTime(String s) {
+        depositPage.selectMenuItem(depositPage.period,s);
     }
 
     public void download() {
-        ((Locatable) DepositPage.document).getCoordinates().inViewPort();
-        DepositPage.document.click();
+        depositPage.click(depositPage.document);
     }
 }

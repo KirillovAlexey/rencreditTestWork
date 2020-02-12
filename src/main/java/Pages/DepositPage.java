@@ -7,12 +7,14 @@ import java.util.List;
 
 public class DepositPage extends BasePage {
 
-    @FindBy(xpath = "//div[@class='internet-bank']//input[@type='checkbox']//..")
-    public static List<WebElement> choiceButton;
+    //@FindBy(xpath = "//div[@class='internet-bank']//input[@type='checkbox']//..")
+    //public static List<WebElement> choiceButton;
+    @FindBy(xpath = "//span[text()='В отделении банка']//..//..//div[@class='jq-checkbox calculator__check']")
+    public WebElement choiceButton;
     @FindBy(xpath = "//input[@name='amount']")
-    public static WebElement amount;
+    public WebElement amount;
     @FindBy(xpath = "//select[@id='period']//option")
-    public static List<WebElement> period;
+    public List<WebElement> period;
     @FindBy(xpath = "//a[contains(text(),'Общие условия по вкладам')]")
-    public static WebElement document;
+    public WebElement document;
 }

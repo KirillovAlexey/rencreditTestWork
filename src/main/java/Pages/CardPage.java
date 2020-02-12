@@ -9,19 +9,19 @@ public class CardPage extends BasePage {
 
 
     @FindBy(xpath = "//input[@name='ClientLastName']")
-    protected static WebElement clientLastName;
+    public WebElement clientLastName;
     @FindBy(xpath = "//input[@name='ClientName']")
-    protected static WebElement clientName;
+    public WebElement clientName;
     /*@FindBy(xpath = "//input[@name='ClientSecondName']")
     protected static WebElement clientSecondName;*/
     @FindBy(xpath = "//div[@class='form-check-row form-check-row_text_large']//div[@class='jq-checkbox js-validation-ignore-checkbox']")
-    protected static WebElement checkBoxSecondNameNull;
+    public WebElement checkBoxSecondNameNull;
     @FindBy(xpath = "//input[@name='ClientMobilePhone']")
-    protected static WebElement phone;
+    public WebElement phone;
     @FindBy(xpath = "//input[@name='AdditionalEmail']")
-    protected static WebElement eMail;
+    public WebElement eMail;
     @FindBy(xpath = "//label[@for='CreditRegion']//..//div[@class='jq-selectbox__trigger']")
-    protected static WebElement listTownClick;
-    @FindBy(xpath = "//div[@id='s2-styler']//ul//li[@style]")
-    protected static List<WebElement> choiceTown;
+    public WebElement listTownClick;
+    @FindBy(xpath = "//div[@id='s2-styler']//ul//li")
+    public List<WebElement> choiceTown;
 }

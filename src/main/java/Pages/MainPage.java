@@ -7,6 +7,6 @@ import java.util.List;
 
 public class MainPage extends BasePage {
 
-    @FindBy(xpath = "//a[@class='service__title-action']")
+    @FindBy(xpath = "//span[contains(text(),'')]//..//..//a[@class='service__title-action']")
     public List<WebElement> CCD;   //Cards,Credit,Deposit
 }

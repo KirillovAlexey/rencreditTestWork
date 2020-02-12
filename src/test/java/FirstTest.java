@@ -27,8 +27,8 @@ public class FirstTest {
         //-------------------------------------------------------------
         depositStep = new DepositStep();
         depositStep.ChoiceOpenDeposit();
-        depositStep.inputMoney();
-        depositStep.choiceTime();
+        depositStep.inputMoney("2 800 000");
+        depositStep.choiceTime("12 месяцев");
         depositStep.download();
     }
 

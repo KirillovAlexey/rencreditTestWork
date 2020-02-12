@@ -2,6 +2,7 @@ package Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -20,11 +21,8 @@ public class BasePage {
     WebDriverWait wait = new WebDriverWait(SetDriver.getDriver(), 2);
 
     public void fillField(WebElement field, String value) {
-        JavascriptExecutor js = (JavascriptExecutor) SetDriver.getDriver();
-        js.executeScript("return arguments[0].style.border='1px solid magenta';", field);
         field.clear();
-        field.sendKeys(value);
-        js.executeScript("return arguments[0].style.border='1px solid black';", field);
+        field.sendKeys(value, Keys.ENTER);
     }
 
     public void click(WebElement element) {
@@ -33,21 +31,16 @@ public class BasePage {
 
     public void selectMenuItem(List<WebElement> menuItems, String itemName) {
         for (WebElement item : menuItems) {
-            if (item.getAttribute("text").equalsIgnoreCase(itemName)) {
+            if (item.getAttribute("text").equals(itemName)) {
                 scrollAndClick(item);
                 return;
             }
         }
-        Assert.fail("Не найден элмент коллеции - " + itemName);
     }
 
     public void selectInput(WebElement element, String value) {
         element.click();
-        element.findElement(By.xpath(".//div[contains(@class,'choices__item')][contains(text(),'" + value + "')]")).click();
-    }
-
-    public void selectCheckBox(List<WebElement> element){
-
+        element.sendKeys(value,Keys.ENTER);
     }
 
     public void scrollAndClick(WebElement element) {

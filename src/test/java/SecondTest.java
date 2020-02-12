@@ -2,21 +2,19 @@ import Steps.BaseStep;
 import Steps.CardStep;
 import Steps.MainStep;
 import io.qameta.allure.Step;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class SecondTest extends BaseStep {
 
     private static BaseStep baseStep = new BaseStep();
     private static MainStep mainStep;
     private static CardStep cardStep;
-    @BeforeTest
+    @BeforeMethod
     public void setUp(){
         baseStep.setUp();
     }
 
-    @Test
+    @Test@Step("2")
     public void main() {
         mainStep = new MainStep();
         mainStep.clickMenu("Оформить карту");
@@ -26,7 +24,7 @@ public class SecondTest extends BaseStep {
                 "rikxela@gmail.com","Пензенская область");
     }
 
-    //@AfterTest
+    @AfterMethod
     public void tearDown(){
         baseStep.tearDown();
     }

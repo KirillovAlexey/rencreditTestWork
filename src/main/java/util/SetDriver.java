@@ -5,6 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 public class SetDriver {
@@ -33,6 +35,9 @@ public class SetDriver {
                 System.setProperty("webdriver.chrome.driver", properties.getProperty("path.chrome"));
                 ChromeOptions options = new ChromeOptions();
                 options.setExperimentalOption("useAutomationExtension", false);
+                Map<String, Object> prefs = new HashMap<String, Object>();
+                prefs.put("plugins.always_open_pdf_externally", true);
+                options.setExperimentalOption("prefs", prefs);
                 driver = new ChromeDriver(options);
                 break;
             case "firefox":

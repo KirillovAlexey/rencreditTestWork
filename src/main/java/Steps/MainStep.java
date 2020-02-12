@@ -1,14 +1,14 @@
 package Steps;
 
 import Pages.MainPage;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import util.SetDriver;
+import org.testng.annotations.DataProvider;
 
 public class MainStep {
     MainPage mainPage = new MainPage();
 
-    public void clickMenu(String s) {
+    @DataProvider
+    public Object[] clickMenu(String s) {
         mainPage.selectMenuItem(mainPage.CCD,s);
+        return new Object[0];
     }
 }

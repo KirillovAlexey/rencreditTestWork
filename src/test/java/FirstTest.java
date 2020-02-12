@@ -1,39 +1,40 @@
-import Pages.BasePage;
 import Steps.BaseStep;
 import Steps.DepositStep;
 import Steps.MainStep;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import io.qameta.allure.Step;
+import org.testng.annotations.*;
 
 
 public class FirstTest {
 
-    private static BaseStep baseStep = new BaseStep();
+    //private static BaseStep baseStep = new BaseStep();
     private static MainStep mainStep;
     private static DepositStep depositStep;
 
-    @BeforeTest
+/*    @BeforeMethod
     public void setUp(){
 
         baseStep.setUp();
-    }
+    }*/
 
-    @Test
-    public void main() {
+    @Test(description = "Выполнение первого тестового сценария.")
+    @DataProvider(name="MainStep",parallel = true)
+    @Step("Выбор баттона 'Открытие вклада'")
+    public Object[] main() {
         mainStep = new MainStep();
         mainStep.clickMenu("Открыть вклад");
-        //mainStep.selectMenuItem(mainStep.CCD,"Открыть вклад");
+
         //-------------------------------------------------------------
         depositStep = new DepositStep();
         depositStep.ChoiceOpenDeposit();
         depositStep.inputMoney("2 800 000");
         depositStep.choiceTime("12 месяцев");
         depositStep.download();
+        return new Object[0];
     }
 
-    @AfterTest
+    /*@AfterMethod
     public void tearDown(){
         baseStep.tearDown();
-    }
+    }*/
 }

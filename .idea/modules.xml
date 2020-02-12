@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/rencreditTestWorkNotePad.iml" filepath="$PROJECT_DIR$/.idea/rencreditTestWorkNotePad.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/rencreditTestWork.iml" filepath="$PROJECT_DIR$/.idea/rencreditTestWork.iml" />
     </modules>
   </component>
 </project>

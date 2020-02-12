@@ -1,11 +1,6 @@
 package Steps;
 
 import Pages.DepositPage;
-import Pages.MainPage;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Locatable;
-import org.openqa.selenium.support.PageFactory;
 
 public class DepositStep{
 

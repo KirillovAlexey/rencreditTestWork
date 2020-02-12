@@ -1,8 +1,6 @@
 package Steps;
 
-import Pages.BasePage;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterTest;
 import util.MyProperties;
 import util.SetDriver;
 
@@ -11,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseStep {
 
-    public static Properties properties = MyProperties.getInstance().getProperties();
+    public Properties properties = MyProperties.getInstance().getProperties();
 
 
     public void setUp() {

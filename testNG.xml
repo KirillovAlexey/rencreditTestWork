@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="TestSuite" thread-count="2"
        parallel="tests">
@@ -19,4 +20,4 @@
             </class>
         </classes>
     </test>
-</suite>
+</suite>-->

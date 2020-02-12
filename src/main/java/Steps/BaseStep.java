@@ -5,12 +5,15 @@ import org.openqa.selenium.WebDriver;
 import util.MyProperties;
 import util.SetDriver;
 
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class BaseStep {
 
+    public Properties properties = MyProperties.getInstance().getProperties();
+
     @Step("Начало работы")
-    public void setUp() {
+    public void initilize() {
         WebDriver driver = SetDriver.getDriver();
         driver.manage().window().maximize();
         driver.get(MyProperties.getInstance().getProperty("url"));
@@ -19,7 +22,7 @@ public class BaseStep {
     }
 
     @Step("Завершение работы")
-    public void tearDown() {
+    public void closeSession() {
         SetDriver.quitDriver();
     }
 }

@@ -5,7 +5,7 @@ import io.qameta.allure.Step;
 
 public class DepositStep {
 
-    private final DepositPage depositPage = new DepositPage();
+    private DepositPage depositPage = new DepositPage();
 
     @Step("Выбор чекбокса \"Открыть вклад в отделении банка.\" ")
     public void ChoiceOpenDeposit() {

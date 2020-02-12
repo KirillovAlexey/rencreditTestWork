@@ -5,7 +5,7 @@ import org.testng.annotations.*;
 public class MainTest {
 
     @Factory
-    @BeforeSuite
+    @BeforeGroups
     public Object[] getTestClass() {
         Object[] factoryTest = new Object[2];
         factoryTest[0] = new FirstTest();

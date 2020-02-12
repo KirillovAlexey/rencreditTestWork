@@ -7,13 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="rencreditTestWork" />
-        <module name="rencreditTestWork1" />
         <module name="rencreditTestWorkNotePad" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="rencreditTestWork" target="1.8" />
-      <module name="rencreditTestWork1" target="1.8" />
       <module name="rencreditTestWorkNotePad" target="7" />
     </bytecodeTargetLevel>
   </component>

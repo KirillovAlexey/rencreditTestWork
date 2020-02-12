@@ -6,26 +6,28 @@ import org.testng.annotations.*;
 
 public class SecondTest {
 
-    private static final BaseStep baseStep = new BaseStep();
-    private static final MainStep mainStep = new MainStep();
-    private static final CardStep cardStep = new CardStep();
+    private BaseStep baseStep = new BaseStep();
+    private MainStep mainStep;
+    private CardStep cardStep;
 
-    @BeforeTest
+    @BeforeClass(description = "Инициализация драйвера")
     public void setUp() {
-        baseStep.setUp();
+        baseStep.initilize();
     }
 
-    @Test(description = "Тестовый сценарий №2")
+    @Test(description = "Второй сценарий")
     @Step("Выбор баттона 'Оформление карты'")
     public void main() {
+        mainStep = new MainStep();
         mainStep.clickMenu("Оформить карту");
-        //-------------------------------------------------------
+        //--------------------------
+        cardStep = new CardStep();
         cardStep.inputInformation("Кириллов", "Алексей", "(987)517-51-58",
-                "rikxela@gmail.com", "Пензенская область");
+                "rikxela@gmail.com", "г. Москва");
     }
 
-    @AfterTest
+    @AfterClass(description = "Завершение работы драйвера")
     public void tearDown() {
-        baseStep.tearDown();
+        baseStep.closeSession();
     }
 }

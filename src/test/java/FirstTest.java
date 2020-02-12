@@ -2,35 +2,36 @@ import Steps.BaseStep;
 import Steps.DepositStep;
 import Steps.MainStep;
 import io.qameta.allure.Step;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 
 public class FirstTest {
 
-    private static final BaseStep baseStep = new BaseStep();
-    private static final MainStep mainStep = new MainStep();
-    private static final DepositStep depositStep = new DepositStep();
+    private  BaseStep baseStep = new BaseStep();
+    private  MainStep mainStep;
+    private  DepositStep depositStep;
 
-    @BeforeTest
+    @BeforeClass(description = "Инициализация драйвера")
     public void setUp() {
-        baseStep.setUp();
+        baseStep.initilize();
     }
 
-    @Test(description = "Тестовый сценарий №1")
+    @Test(description = "Первый сценарий")
     @Step("Выбор баттона 'Открытие вклада'")
     public void main() {
+        mainStep = new MainStep();
         mainStep.clickMenu("Открыть вклад");
-        //-------------------------------------------------------
+
+        //-------------------------------------------------------------
+        depositStep = new DepositStep();
         depositStep.ChoiceOpenDeposit();
         depositStep.inputMoney("2 800 000");
         depositStep.choiceTime("12 месяцев");
         depositStep.download();
     }
 
-    @AfterTest
+    @AfterClass(description = "Завершение работы драйвера")
     public void tearDown() {
-        baseStep.tearDown();
+        baseStep.closeSession();
     }
 }

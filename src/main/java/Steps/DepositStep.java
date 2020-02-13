@@ -6,7 +6,7 @@ import org.testng.Assert;
 
 public class DepositStep {
 
-    private DepositPage depositPage = new DepositPage();
+    private final DepositPage depositPage = new DepositPage();
 
     @Step("Выбор чекбокса \"Открыть вклад в отделении банка.\" ")
     public void ChoiceOpenDeposit() {
@@ -16,7 +16,7 @@ public class DepositStep {
     @Step("Ввод суммы вклада.")
     public void inputMoney(String s) {
         DepositPage.selectInput(DepositPage.amount, s);
-        Assert.assertEquals(DepositPage.amount.getAttribute("value"),"1 800 000");
+        Assert.assertEquals(DepositPage.amount.getAttribute("value"),"2 800 000");
     }
 
     @Step("Выбор срока вклада")

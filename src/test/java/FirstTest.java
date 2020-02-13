@@ -7,9 +7,7 @@ import org.testng.annotations.*;
 
 public class FirstTest {
 
-    private  BaseStep baseStep = new BaseStep();
-    private static MainStep mainStep;
-    private static DepositStep depositStep;
+    private final BaseStep baseStep = new BaseStep();
 
     @BeforeClass(description = "Инициализация драйвера")
     public void setUp() {
@@ -20,8 +18,8 @@ public class FirstTest {
     @Test(description = "Первый сценарий")
     @Step("Выбор баттона 'Открытие вклада'")
     public void main() {
-        mainStep = new MainStep();
-        depositStep = new DepositStep();
+        MainStep mainStep = new MainStep();
+        DepositStep depositStep = new DepositStep();
         mainStep.clickMenu("Открыть вклад");
         mainStep.checkClickMenu("Вклады");
         //-------------------------------------------------------------

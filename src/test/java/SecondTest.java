@@ -6,9 +6,7 @@ import org.testng.annotations.*;
 
 public class SecondTest {
 
-    private BaseStep baseStep = new BaseStep();
-    private MainStep mainStep;
-    private CardStep cardStep;
+    private final BaseStep baseStep = new BaseStep();
 
     @BeforeClass(description = "Инициализация драйвера")
     public void setUp() {
@@ -19,10 +17,10 @@ public class SecondTest {
     @Test(description = "Второй сценарий")
     @Step("Выбор баттона 'Оформление карты'")
     public void main() {
-        mainStep = new MainStep();
+        MainStep mainStep = new MainStep();
         mainStep.clickMenu("Оформить карту");
         //--------------------------
-        cardStep = new CardStep();
+        CardStep cardStep = new CardStep();
         cardStep.inputInformation("Кириллов", "Алексей", "  (987)517-51-58",
                 "rikxela@gmail.com", "г. Москва");
         cardStep.checkInput("Кириллов", "Алексей", "+7 (987) 517-51-58",

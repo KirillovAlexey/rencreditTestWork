@@ -5,7 +5,7 @@ import io.qameta.allure.Step;
 import org.testng.Assert;
 
 public class MainStep {
-    private MainPage mainPage = new MainPage();
+    private final MainPage mainPage = new MainPage();
 
     @Step("Выбор интересующего меню.")
     public void clickMenu(String s) {

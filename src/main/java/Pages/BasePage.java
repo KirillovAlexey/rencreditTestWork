@@ -16,7 +16,7 @@ public class BasePage {
         PageFactory.initElements(SetDriver.getDriver(), this);
     }
 
-    private WebDriverWait wait = new WebDriverWait(SetDriver.getDriver(), 2);
+    private final WebDriverWait wait = new WebDriverWait(SetDriver.getDriver(), 2);
 
     public void fillField(WebElement field, String value) {
         field.clear();

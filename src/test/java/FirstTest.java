@@ -8,22 +8,24 @@ import org.testng.annotations.*;
 public class FirstTest {
 
     private  BaseStep baseStep = new BaseStep();
-    private  MainStep mainStep;
-    private  DepositStep depositStep;
+    private static MainStep mainStep;
+    private static DepositStep depositStep;
 
     @BeforeClass(description = "Инициализация драйвера")
     public void setUp() {
         baseStep.initilize();
+        baseStep.checkInitilize();
     }
 
     @Test(description = "Первый сценарий")
     @Step("Выбор баттона 'Открытие вклада'")
     public void main() {
         mainStep = new MainStep();
-        mainStep.clickMenu("Открыть вклад");
-
-        //-------------------------------------------------------------
         depositStep = new DepositStep();
+        mainStep.clickMenu("Открыть вклад");
+        mainStep.checkClickMenu("Вклады");
+        //-------------------------------------------------------------
+
         depositStep.ChoiceOpenDeposit();
         depositStep.inputMoney("2 800 000");
         depositStep.choiceTime("12 месяцев");

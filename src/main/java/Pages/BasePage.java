@@ -36,7 +36,7 @@ public class BasePage {
         }
     }
 
-    public void selectInput(WebElement element, String value) {
+    public static void selectInput(WebElement element, String value) {
         element.click();
         element.sendKeys(value, Keys.ENTER);
     }

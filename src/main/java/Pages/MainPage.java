@@ -9,4 +9,7 @@ public class MainPage extends BasePage {
 
     @FindBy(xpath = "//span[contains(text(),'')]//..//..//a[@class='service__title-action']")
     public List<WebElement> CCD;   //Cards,Credit,Deposit
+
+    @FindBy(xpath = "//a[@class='nav__link active']")
+    public WebElement optionButton;
 }

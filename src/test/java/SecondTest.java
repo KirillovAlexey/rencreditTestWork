@@ -13,6 +13,7 @@ public class SecondTest {
     @BeforeClass(description = "Инициализация драйвера")
     public void setUp() {
         baseStep.initilize();
+        baseStep.checkInitilize();
     }
 
     @Test(description = "Второй сценарий")
@@ -22,7 +23,9 @@ public class SecondTest {
         mainStep.clickMenu("Оформить карту");
         //--------------------------
         cardStep = new CardStep();
-        cardStep.inputInformation("Кириллов", "Алексей", "(987)517-51-58",
+        cardStep.inputInformation("Кириллов", "Алексей", "  (987)517-51-58",
+                "rikxela@gmail.com", "г. Москва");
+        cardStep.checkInput("Кириллов", "Алексей", "+7 (987) 517-51-58",
                 "rikxela@gmail.com", "г. Москва");
     }
 

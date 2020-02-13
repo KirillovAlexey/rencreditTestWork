@@ -10,11 +10,13 @@ public class DepositPage extends BasePage {
     //@FindBy(xpath = "//div[@class='internet-bank']//input[@type='checkbox']//..")
     //public static List<WebElement> choiceButton;
     @FindBy(xpath = "//span[text()='В отделении банка']//..//..//div[@class='jq-checkbox calculator__check']")
-    public WebElement choiceButton;
+    public static WebElement choiceButton;
     @FindBy(xpath = "//input[@name='amount']")
-    public WebElement amount;
+    public static WebElement amount;
+    @FindBy(xpath = "//div[@class='jq-selectbox__select-text']")
+    public static WebElement timeChoice;
     @FindBy(xpath = "//select[@id='period']//option")
-    public List<WebElement> period;
+    public  static List<WebElement> period;
     @FindBy(xpath = "//a[contains(text(),'Общие условия по вкладам')]")
-    public WebElement document;
+    public static WebElement document;
 }

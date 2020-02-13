@@ -9,9 +9,9 @@ public class CardPage extends BasePage {
 
 
     @FindBy(xpath = "//input[@name='ClientLastName']")
-    public WebElement clientLastName;
+    public  WebElement clientLastName;
     @FindBy(xpath = "//input[@name='ClientName']")
-    public WebElement clientName;
+    public  WebElement clientName;
     /*@FindBy(xpath = "//input[@name='ClientSecondName']")
     protected static WebElement clientSecondName;*/
     @FindBy(xpath = "//div[@class='form-check-row form-check-row_text_large']//div[@class='jq-checkbox js-validation-ignore-checkbox']")
